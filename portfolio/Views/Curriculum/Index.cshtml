@@ -1,0 +1,15 @@
+﻿@model CurriculumViewModel;
+
+@{
+    ViewData["Title"] = "Curriculum";
+}
+
+@await Html.PartialAsync(partialViewName: "_CVHeaderPartial")
+
+@await Html.PartialAsync(partialViewName: "_ProfessionalProfilePartial")
+
+@await Html.PartialAsync(partialViewName: "_AcademicBackgroundPartial", Model.FormacionAcademica)
+
+@await Html.PartialAsync(partialViewName: "_SkillsPartial", Model.Habilidades)
+
+@await Html.PartialAsync(partialViewName: "_WorkExperiencePartial", Model.ExperienciaLaboral)

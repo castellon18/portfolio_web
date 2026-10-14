@@ -1,0 +1,41 @@
+﻿@model ContactoViewModel
+@{
+    ViewData[index: "Title"] = "Contacto";
+}
+
+<div class="my-2 border border-1 rounded shadow p-3">
+    <h2 class="mb-2 card-title text-primary-emphasis fw-bold text-center display-4">Contáctame</h2>
+    <h3 class="mb-4 card-subtitle text-secondary-emphasis fw-medium text-center">Puedes contactarme a través del siguiente formulario</h3>
+    <form asp-controller="Contacto" asp-action="Index" method="post">
+        <div asp-validation-summary="ModelOnly" class="alert alert-danger fade show"></div>
+
+        <div class="mb-3">
+            <label asp-for="Nombres" class="form-label">Nombres</label>
+            <input asp-for="Nombres" class="form-control" placeholder="digita tus nombres">
+            <span asp-validation-for="Nombres" class="text-danger mt-1 d-block"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Apellidos" class="form-label">Apellidos</label>
+            <input asp-for="Apellidos" class="form-control" placeholder="digita tus apellidos">
+            <span asp-validation-for="Apellidos" class="text-danger mt-1 d-block"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label">Correo electrónico</label>
+            <input asp-for="Email" class="form-control" placeholder="digita tu correo electrónico">
+            <span asp-validation-for="Email" class="text-danger mt-1 d-block"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Mensaje" class="form-label">Mensaje</label>
+            <textarea asp-for="Mensaje" class="form-control" id="message" rows="5" placeholder="digita tu mensaje"></textarea>
+            <span asp-validation-for="Mensaje" class="text-danger mt-1 d-block"></span>
+        </div>
+        <button type="submit" class="btn btn-outline-primary">Enviar</button>
+        <a class="btn btn-outline-secondary" asp-controller="Home" asp-action="Index">Cancelar</a>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync(partialViewName: "_ValidationScriptsPartial");
+    }
+}

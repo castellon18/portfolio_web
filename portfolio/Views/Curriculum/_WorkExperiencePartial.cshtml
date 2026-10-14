@@ -1,0 +1,48 @@
+﻿@model IEnumerable<ExperienciaLaboralViewModel>;
+
+<div class="card mt-3">
+    <div class="card-header">
+        <h4 class="card-title text-primary text-uppercase">Experiencia Laboral</h4>
+    </div>
+    <div class="card-body row g-4">
+        @foreach (ExperienciaLaboralViewModel item in Model)
+        {
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card card-hover">
+                    <div class="card-content">
+                        <div class="card-header bg-light">
+                            <h5 class="fw-bold mb-1">@item.Empresa <span class="badge bg-primary">@item.Years</span></h5>
+                            <h6 class="fw-semibold mb-1">@item.Posicion</h6>
+                            <p class="fst-italic mb-0">@item.Localidad</p>
+                        </div>
+
+                        @if (item.Responsabilidades != null && item.Responsabilidades.Any())
+                        {
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    @foreach (var responsabilidad in item.Responsabilidades)
+                                    {
+                                        <li class="list-group-item">@responsabilidad</li>
+                                    }
+                                </ul>
+                            </div>
+                        }
+                        @if (item.TecnologiasUsadas != null && item.TecnologiasUsadas.Any())
+                        {
+                            <div class="card-footer bg-white">
+                                <div class="d-flex flex-wrap gap-2">
+                                    @foreach (TecnologiaUsadaViewModel tecnologia in item.TecnologiasUsadas)
+                                    {
+                                        <span class="badge bg-primary tech-badge">
+                                            @tecnologia.Nombre - @tecnologia.Version
+                                        </span>
+                                    }
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

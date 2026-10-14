@@ -1,0 +1,83 @@
+/* Paleta de colores */
+:root {
+    --primary: #2C3E50;
+    --secondary: #18BC9C;
+    --light: #ECF0F1;
+    --dark: #34495E;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin-bottom: 60px; /* Para evitar que el footer se superponga al contenido */
+    background-color: var(--light);
+    color: var(--dark);
+}
+
+/* _HeaderPartial */
+
+.header {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+    animation: fadeInDown 1.5s ease;
+}
+
+    .header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+    }
+
+    .header p {
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+    }
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.nav-link {
+    margin: 0 1rem;
+    transition: color 0.3s;
+}
+
+    .nav-link:hover {
+        color: var(--primary);
+    }
+
+/* _FooterPartial */
+footer {
+    position: absolute;
+    bottom: 0;
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+/*_WorkExperiencePartial*/
+
+.card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .card-hover:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }

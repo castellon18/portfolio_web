@@ -1,0 +1,11 @@
+﻿@model HomeIndexViewModel
+
+@{
+    ViewData[index: "Title"] = "Home";
+}
+
+@await Html.PartialAsync(partialViewName: "_AboutMePartial")
+
+@await Html.PartialAsync(partialViewName: "_SkillsPartial", model: Model.Habilidades)
+
+@await Html.PartialAsync(partialViewName: "_ExperiencePartial", model: Model.ExperienciasLaborales)

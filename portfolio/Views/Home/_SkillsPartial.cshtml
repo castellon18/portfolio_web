@@ -1,0 +1,13 @@
+﻿@model IEnumerable<HabilidadesViewModel>
+
+<div class="container my-5">
+    <h2 class="card-title text-primary-emphasis fw-bold mb-3">Habilidades</h2>
+    <div class="row p-3 align-items-center g-3">
+        @foreach (HabilidadesViewModel habilidad in Model)
+        {
+            <div class="col-4">
+                <div class="border-bottom border-1 rounded-bottom shadow-sm p-3">✔ @habilidad.Titulo</div>
+            </div>
+        }
+    </div>
+</div>

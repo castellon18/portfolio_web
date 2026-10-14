@@ -1,0 +1,22 @@
+﻿@model IEnumerable<ExperienciaLaboralViewModel>
+
+<div class="container my-3">
+    <h2 class="card-title text-primary-emphasis fw-bold mb-3">Experiencia</h2>
+    <div class="row p-3 g-3">
+        @foreach (ExperienciaLaboralViewModel item in Model)
+        {
+            <div class="col-12 col-md-4">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="card-body border-bottom border-start border-end border-1 rounded-bottom">
+                        <h5 class="card-title">@item.Posicion - @item.Empresa</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">@item.Years</h6>
+                        <p class="card-text">
+                            Responsable de la dirección estratégica, expansión internacional y optimización de procesos
+                            internos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

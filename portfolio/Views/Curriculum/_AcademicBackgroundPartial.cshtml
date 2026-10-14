@@ -1,0 +1,26 @@
+﻿@model IEnumerable<FormacionAcademicaViewModel>;
+
+<div class="card mt-3">
+    <div class="card-header">
+        <h4 class="card-title text-primary text-uppercase">Formación Académica</h4>
+    </div>
+    <div class="card-body">
+        <ol class="list-group">
+            @foreach (FormacionAcademicaViewModel item in Model)
+            {
+                <li class="list-group-item d-flex flex-column align-items-start">
+                    <span class="badge text-bg-primary rounded-pill mb-2">@item.Year</span>
+                    <div class="ms-2">
+                        <div class="fw-bold">@item.Institucion</div>
+                        @item.Titulo
+                        <br />
+                        @if (!string.IsNullOrEmpty(item.Instructor))
+                        {
+                            <span><strong>Instructor: </strong>@item.Instructor</span>
+                        }
+                    </div>
+                </li>
+            }
+        </ol>
+    </div>
+</div>
